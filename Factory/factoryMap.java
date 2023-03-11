@@ -6,6 +6,7 @@
 package Factory;
 
 import Mapas.ClassHashMap;
+import Mapas.ClassLinkedHashMap;
 import Mapas.ClassTreeMap;
 import Mapas.IMap;
 
@@ -21,7 +22,7 @@ public class factoryMap<E, V> {
         }else if(opc == 2){
             return new ClassTreeMap<>();
         }else{
-            return null;
+            return new ClassLinkedHashMap<>();
         }
     }
     

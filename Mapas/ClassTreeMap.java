@@ -57,10 +57,10 @@ public class ClassTreeMap<E, V> extends AbstractMap<E, V>{
             sortedMap.putAll(mapForCollection);
             
             for(Map.Entry<String, List<String>> entry:  sortedMap.entrySet()){
-               res+="Nombre de la carta: "+entry.getKey()+
-                       "\n  Tipo de carta: "+entry.getValue().get(0)+
-                       "\n  Numero de cartas que posee: "+entry.getValue().get(1)+"\n";
-           }
+                res+="Nombre de la carta: "+entry.getKey()+
+                        "\n  Tipo de carta: "+entry.getValue().get(0)+
+                        "\n  Numero de cartas que posee: "+entry.getValue().get(1)+"\n";
+            }
         }else{
             TreeMap<String, List<String>> mapForCollection = (TreeMap<String, List<String>>) map;
             for(Map.Entry<String, List<String>> entry:mapForCollection.entrySet()){
