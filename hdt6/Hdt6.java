@@ -8,8 +8,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ *
+ * @author Gerax
+ */
 public class Hdt6 {
     
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         //Se crea el factory para los maps
         factoryMap factory = new factoryMap();
@@ -26,6 +34,7 @@ public class Hdt6 {
         boolean start = false;
         //El usuario selecciona el mapa que desea
         String opc = sc.nextLine();
+        //String opc = "1";
         if(opc.equals("1") || opc.equals("2")||opc.equals("3")){
             start = true;
             int selected = Integer.parseInt(opc);
@@ -40,6 +49,7 @@ public class Hdt6 {
                         + "3) Nombre, tipo y cantidad de las cartas de la coleccion\n4) Nombre, tipo y cantidad de las cartas de la coleccion, ordenada por tipo\n"
                         + "5) Nombre y tipo de todas las cartas existentes\n6) Nombre y tipo de todas las cartas existentes, ordenas por tipo");
                 String menu = sc.nextLine();
+                //String menu = "5";
                 if(menu.equals("1")){
                     System.out.println("--------------------------------------------\n");
                     System.out.println("Ingrese el nombre completo de la carta que quiere agregar");
@@ -103,6 +113,11 @@ public class Hdt6 {
         System.out.println("Termino el programa");
     }
     
+    /**
+     *
+     * @param map
+     * @return
+     */
     public static IMap CreateCollection(IMap map){
         //Aqui se lee el archivo
         FileReader archivo;

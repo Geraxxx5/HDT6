@@ -16,25 +16,45 @@ import java.util.Map;
 /**
  *
  * @author Gerax
+ * @param <E>
+ * @param <V>
  */
 public class ClassHashMap<E, V> extends AbstractMap<E, V>{
 
     HashMap<E, V> map;
     
+    /**
+     *
+     */
     public ClassHashMap(){
         map = new HashMap<E, V>();
     }
 
+    /**
+     *
+     * @param name
+     * @param type
+     */
     @Override
     public void addCard(E name, V type) {
         map.put(name, type);
     }
 
+    /**
+     *
+     * @param name
+     * @return
+     */
     @Override
     public String typeOfCard(E name) {
         return String.valueOf(map.get(name));
     }
 
+    /**
+     *
+     * @param sort
+     * @return
+     */
     @Override
     public String showUserCollection(boolean sort) {
         //Se hace un casteo porque los valores son E y V estos no se pueden comarar o modificar
@@ -67,6 +87,11 @@ public class ClassHashMap<E, V> extends AbstractMap<E, V>{
         return res;
     }
 
+    /**
+     *
+     * @param sort
+     * @return
+     */
     @Override
     public String showCollection(boolean sort) {
         String res = "";
@@ -92,16 +117,30 @@ public class ClassHashMap<E, V> extends AbstractMap<E, V>{
         return res;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int size() {
         return map.size();
     }
 
+    /**
+     *
+     * @param name
+     * @return
+     */
     @Override
     public boolean contains(E name) {
         return map.containsKey(name);
     }
 
+    /**
+     *
+     * @param key
+     * @return
+     */
     @Override
     public List<String> obtainCard(E key) {
         List<String> card = new ArrayList<>();
@@ -110,6 +149,11 @@ public class ClassHashMap<E, V> extends AbstractMap<E, V>{
         return card;
     }
 
+    /**
+     *
+     * @param key
+     * @return
+     */
     @Override
     public V obtainValue(E key) {
         return map.get(key);

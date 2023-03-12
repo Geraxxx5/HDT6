@@ -13,9 +13,17 @@ import Mapas.IMap;
 /**
  *
  * @author Gerax
+ * @param <E>
+ * @param <V>
  */
 public class factoryMap<E, V> {
     
+    /**
+     *
+     * @param opc
+     * @return IMap<E, V>
+     * The desired map is selected
+     */
     public IMap<E, V> getMap(int opc){
         if(opc == 1){
             return new ClassHashMap<>();

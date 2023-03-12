@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Mapas;
 
 import java.util.List;
@@ -10,26 +5,77 @@ import java.util.List;
 /**
  *
  * @author Gerax
+ * @param <E>
+ * @param <V>
+ * The interface for class implementation
  */
 public interface IMap<E, V> {
-    //Añade una carta a la coleccion
+
+    /**
+     *
+     * @param name
+     * @param type
+     * Add cards to the collection
+     */
     public void addCard(E name, V type);
     
     //Retorna el tipo de carta
+
+    /**
+     *
+     * @param name
+     * @return String
+     * Return the type of the card using the key
+     */
     public String typeOfCard(E name);
     
-    //Muestra la coleccion del usuario
-    //Pide un booleando para saber si: true: sort por tipo de carta, false: no hay sort
+    /**
+     *
+     * @param sort
+     * @return
+     * It will return the user's collection, sorted or unsorted depending on the parameter sent
+     */
     public String showUserCollection(boolean sort);
-    //Muestra la coleccion de todas las cartas
-    //Pide un booleando para saber si: true: sort por tipo de carta, false: no hay sort
+
+    /**
+     *
+     * @param sort
+     * @return
+     * It will return the complete collection, sorted or unsorted depending on the parameter sent
+     */
     public String showCollection(boolean sort);
+
+    /**
+     *
+     * @return
+     * Return size of the map
+     */
     public int size();
     //Pregunta si contiene
+
+    /**
+     *
+     * @param name
+     * @return
+     * Check if the sent key exists
+     */
     public boolean contains(E name);
-    //Obtiene la carta en una lista: 0: Nombre de la carta, 1: tipo de la carta
+
+
+    /**
+     *
+     * @param key
+     * @return
+     * he requested card is returned through a list, which has the card name or key in position 0 and the card type in position 1
+     */
     public List<String> obtainCard(E key);
-    //Obtiene el value de la key que se le manda y lo retorna
-    //Esto sirve para acceder a la lista en el mapa del usuario
+
+
+    /**
+     *
+     * @param key
+     * @return
+     * For the user's collection, when having a list type to interact with it, it is returned
+     */
     public V obtainValue(E key);
 }
